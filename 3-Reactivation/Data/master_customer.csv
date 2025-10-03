@@ -1,0 +1,21 @@
+SubscriberKey,PhoneID,FirstName,LastName,Email,EmailConsent,InactiveTenureDays,LastPlanID
+CID001,P001,Alice,Smith,alice@example.com,Opted In,45,PLAN001
+CID001,P002,Alice,Smith,alice@example.com,Opted In,120,PLAN002
+CID002,P003,Bob,Johnson,bob@example.com,Opted In,60,PLAN003
+CID003,P004,Charlie,Brown,charlie@example.com,Opted Out,20,PLAN004
+CID003,P005,Charlie,Brown,charlie@example.com,Opted Out,150,PLAN005
+CID004,P006,Diana,Clark,diana@example.com,Opted In,180,PLAN006
+CID005,P007,Evan,Davis,evan@example.com,Opted In,50,PLAN007
+CID006,P008,Fiona,Evans,fiona@example.com,Opted In,130,PLAN008
+CID006,P009,Fiona,Evans,fiona@example.com,Opted In,15,PLAN009
+CID007,P010,George,Harris,george@example.com,Opted In,100,PLAN010
+CID008,P011,Hannah,White,hannah@example.com,Opted In,175,PLAN011
+CID008,P012,Hannah,White,hannah@example.com,Opted In,80,PLAN012
+CID009,P013,Ian,Taylor,ian@example.com,Opted In,30,PLAN013
+CID009,P014,Ian,Taylor,ian@example.com,Opted Out,10,PLAN014
+CID010,P015,Julia,Martin,julia@example.com,Opted In,90,PLAN015
+CID010,P016,Julia,Martin,julia@example.com,Opted In,170,PLAN016
+CID011,P017,Kevin,Lee,kevin@example.com,Opted In,55,PLAN017
+CID012,P018,Laura,Hall,laura@example.com,Opted In,60,PLAN018
+CID013,P019,Max,Adams,max@example.com,Opted In,145,PLAN019
+CID014,P020,Nia,Carter,nia@example.com,Opted In,12,PLAN020
