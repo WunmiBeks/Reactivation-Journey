@@ -1,5 +1,5 @@
 
-# ANNIVERSARY JOURNEY
+# ANNIVERSARY AUDIENCE SEGMENTATION
 
 ## Project Overview
 
@@ -11,9 +11,9 @@ A reminder email is to be sent out two weeks later for any member that have yet 
 
 **Discount Rules:**
 The discount percentage depends on the total spend during the one-year membership period:
-**Spend Range 1:** $0 - $500 → 10% Discount
-**Spend Range 2:** $501 - $1,000 → 15% Discount
-**Spend Range 3:** $1,001+ → 20% Discount
+- **Spend Range 1:** $0 - $500 → 10% Discount
+- **Spend Range 2:** $501 - $1,000 → 15% Discount
+- **Spend Range 3:** $1,001+ → 20% Discount
 
 **The campaign’s target audience criteria are as follows:**
 - Members are to be selected on their 1 year anniversary from member joined date

@@ -7,7 +7,7 @@ Each project demonstrates how SQL queries can be used in Automation Studio and Q
 
 ## Case Studies
 
-### 1. Event Promotion Automation – Velloria Events
+### 1. Event Promotion Audience Segmentation – Velloria Events
 A one-time promotional automation for an exclusive gala dinner.  
 - Includes only opted-in subscribers.  
 - Excludes subscribers who attended a gala event in the last 12 months.  
@@ -16,7 +16,7 @@ A one-time promotional automation for an exclusive gala dinner.
 
 ---
 
-### 2. Welcome Series Project – Lifestyle Brand
+### 2. Welcome Series Audience – Lifestyle Brand
 An ongoing three-part welcome journey for a new membership/loyalty program.  
 - Identifies newly opted-in members using **JoinDate**.  
 - Ensures unique entries by excluding members who have already entered the journey.  
@@ -25,7 +25,7 @@ An ongoing three-part welcome journey for a new membership/loyalty program.
 
 ---
 
-### 3. Reactivation Campaign – Gee Mobile
+### 3. Reactivation Audience Segmentation – Gee Mobile
 A reactivation campaign for inactive mobile customers with multiple phone lines.  
 - Targets phone IDs inactive for **10–180 days**.  
 - Prevents re-entry within 90 days.  
@@ -36,7 +36,7 @@ A reactivation campaign for inactive mobile customers with multiple phone lines.
 
 ---
 
-### 4. Anniversary Journey – Golden Table Restaurants
+### 4. Anniversary Audience Segementation – Golden Table Restaurants
 A personalized anniversary campaign celebrating one year of membership.  
 - Selects members on their exact **1-year join date**.  
 - Filters to only opted-in members with at least one transaction in the first year.  
@@ -49,11 +49,8 @@ A personalized anniversary campaign celebrating one year of membership.
 
 ---
 
-
----
-
 ## Skills Demonstrated
-- Audience segmentation with SQL queries.  
+- Audience segmentation with SQL queries in Automation Studio  
 - Deduplication and exclusion logic for clean targeting.  
 - Dynamic field population for personalization.  
 - Support for journey entry criteria and eligibility rules.  
