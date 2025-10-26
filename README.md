@@ -28,26 +28,15 @@ The campaign’s target audience criteria are as follows:
 ### SFMC Tools
 - Contact Builder  
 - Data Extensions  
-- Audience Builder  
-- Automation Studio  
-- File Transfer Activity  
-- Import Activity  
-- SQL Query Activity  
+- Automation Studio   
 - Email Studio  
 - Content Builder  
-- Journey Builder  
-- Decision Splits & Wait Activities  
-- Entry Events  
-- Einstein Content Recommendations  
-- Einstein Engagement Split  
-- Marketing Cloud Connect  
-- Data Views  
-- REST / SOAP APIs  
+- Journey Builder   
+
 
 ### Languages
 - SQL  
-- AMPscript  
-- SSJS (Server-Side JavaScript)  
+- AMPscript   
 - HTML/CSS  
 
 ---
@@ -59,7 +48,7 @@ Subject Line: We’ve been missing you — here’s 50% off your plan!
 Preheader: Reactivate your line and grab your half-price offer today 💥
 
 **Body:**
-Hey `<FirstName>`,  
+Hey <FirstName>,  
 
 We noticed your line `<PhoneNo>` has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉  
 
@@ -81,7 +70,7 @@ Your GeeMobile Team
 
 **Body:**
 
-Hi `<FirstName>`,  
+Hi <FirstName>,  
 
 Just a friendly nudge — your reactivation offer for <PhoneNo> is still active, and we’d hate for you to miss it! 💌 
 
