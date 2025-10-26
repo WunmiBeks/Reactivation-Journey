@@ -48,13 +48,13 @@ Subject Line: We’ve been missing you — here’s 50% off your plan!
 Preheader: Reactivate your line and grab your half-price offer today 💥
 
 **Body:**
-Hey `<FirstName%%>`,  
+Hey **`<FirstName>`**,  
 
-We noticed your line `<PhoneNo>` has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉  
+We noticed your line **`<PhoneNo>`** has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉  
 
 Here’s what’s waiting for you: 
-🚀 `<Plan A upgrade name>` — just $`<UpgradePlanA_Price>`! Use code `<UpgradePlanA_50PromoCode>`  
-🔥 `<Plan B upgrade name>` — only $`<UpgradePlanB_Price>`! Use code `<PromoCodeB_50romoCode>` 
+🚀 **`<Plan A upgrade name>`** — just **$`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
+🔥 **`<Plan B upgrade name>`** — only $**`<UpgradePlanB_Price>`**! Use code **`<PromoCodeB_50romoCode>`** 
 
 Don’t wait too long — these offers won’t last forever!
 [Reactivate Now]
@@ -70,13 +70,13 @@ Your GeeMobile Team
 
 **Body:**
 
-Hi `<FirstName>`,  
+Hi **`<FirstName>`**,  
 
-Just a friendly nudge — your reactivation offer for `<PhoneNo>` is still active, and we’d hate for you to miss it! 💌 
+Just a friendly nudge — your reactivation offer for **`<PhoneNo>`** is still active, and we’d hate for you to miss it! 💌 
 
 Take your pick 👇🏽  
-💫 Upgrade to `<Plan A upgrade name>` for only $`<UpgradePlanA Price>` — grab it with `<UpgradePlanA_50PromoCode>`!  
-🔥 Or pick `<Plan B upgrade name>` at $`<UpgradePlanB Price>` using `<UpgradePlanB_50PromoCode>`!
+💫 Upgrade to **`<Plan A upgrade name>`** for only **$`<UpgradePlanA Price>`** — grab it with **`<UpgradePlanA_50PromoCode>`**!  
+🔥 Or pick **`<Plan B upgrade name>`** at $**`<UpgradePlanB Price>`** using **`<UpgradePlanB_50PromoCode>`**!
 
 Reconnect and enjoy better data, better deals, and all the fun that comes with it!
 [Reactivate My Line]
@@ -94,11 +94,13 @@ Preheader: This is your last chance to reactivate with a special deal.
 
 Hey **`<FirstName>`**,  
 
-This is it — your final reminder to bring back your line `<PhoneNo>` and grab these exclusive deals before they disappear! ⏳  
+This is it — your final reminder to bring back your line **`<PhoneNo>`** and grab these exclusive deals before they disappear! ⏳  
 
 We’ve got two awesome plans waiting for you 👇🏽  
-🚀 `<Plan A upgrade name>` — just $`<UpgradePlanA_Price>`! Use code `<UpgradePlanA_50PromoCode>`  
-🔥 `<Plan B upgrade name>` — only $`<UpgradePlanB_Price>`! Use code `<PromoCodeB_50romoCode>`
+🚀 **`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
+🚀 **`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
+🚀 **`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
+🔥 **`<Plan B upgrade name>`** — only $**`<UpgradePlanB_Price>`**! Use code **`<PromoCodeB_50romoCode>`**
 
 Don’t let your special offer slip away — it’s your last chance to reconnect and enjoy the perks you love!
 [Reactivate Before It’s Gone]
