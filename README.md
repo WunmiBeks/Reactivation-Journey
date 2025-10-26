@@ -48,7 +48,7 @@ Subject Line: We’ve been missing you — here’s 50% off your plan!
 Preheader: Reactivate your line and grab your half-price offer today 💥
 
 **Body:**
-Hey <FirstName>,  
+Hey %%FirstName%%,  
 
 We noticed your line `<PhoneNo>` has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉  
 
