@@ -1,0 +1,28 @@
+%%[
+
+/* RETRIEVE FIELDS */
+SET @firstName = [FirstName]
+SET @email = [Email]
+SET @phone = [PhoneNo]
+SET @newPlanA = [UpgradePlanA_PlanName]
+SET @newPlanB = [UpgradePlanB_PlanName]
+SET @newPlanAPrice = [UpgradePlanA_PlanPrice]
+SET @newPlanBPrice = [UpgradePlanB_PlanPrice]
+SET @promoA_50 = [UpgradePlanA_50PromoCode]
+SET @promoB_50 = [UpgradePlanB_50PromoCode]
+
+/* PHONE NUMBER FORMATTED */
+SET @phoneNo = Format(@phoneNo, "(###) ###-####")
+
+/* FIRST NAME LOGIC */
+IF NOT EMPTY(@firstName) THEN
+  SET @firstNameTrim = Trim(@firstName)
+  SET @finalName = Propercase(@firstNameTrim)
+  
+ELSE
+  SET @finalName = "Valued Customer"
+ENDIF
+
+]%%
+
+`<a href="tel:%%=v(@phone)=%%">%%=v(@phoneNo)=%%</a>`
