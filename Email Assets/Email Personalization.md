@@ -1,3 +1,4 @@
+## Personalized Email Copies
 
 ### Email 1: 
 Subject Line: We’ve been missing you — here’s 50% off your plan!
@@ -9,8 +10,8 @@ Hey `%%=v(@firstName)=%%`,
 We noticed your line `%%=v(@phoneNo)=%%` has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉  
 
 Here’s what’s waiting for you: 
-🚀 `%%=v(@newPlanA)=%%` — just $`%%=v(@newPlanAPrice)=%%`! Use code `%%=v(@promoA_50)=%%`  
-🔥 `%%=v(@newPlanB)=%%` — only $`%%=v(@newPlanBPrice)=%%`! Use code `%%=v(@promoB_50)=%%` 
+- `%%=v(@newPlanA)=%%` — just $`%%=v(@newPlanAPrice)=%%`! Use code `%%=v(@promoA_50)=%%`  
+- `%%=v(@newPlanB)=%%` — only $`%%=v(@newPlanBPrice)=%%`! Use code `%%=v(@promoB_50)=%%` 
 
 Don’t wait too long — these offers won’t last forever!
 `<a href="https://geemobile.com/reactivation">Reactivate Now</a>`
@@ -19,6 +20,7 @@ Let’s get you back to enjoying all the perks of being connected! 💙
 
 Your GeeMobile Team
 
+---
 
 ### Email 2: 
 
@@ -42,7 +44,7 @@ We’re saving your spot… but not for much longer. 😉
 
 Your GeeMobile Team
 
-
+---
 
 ### Email 3:
 
