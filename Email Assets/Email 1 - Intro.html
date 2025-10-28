@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #333333;
+  }
+  .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  p {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+    font-size: 16px; /* match paragraph text size */
+    line-height: 1.6; /* consistent spacing */
+  }
+  li strong {
+    font-weight: 600; /* make plan names stand out */
+  }
+  a.button {
+    display: inline-block;
+    background-color: #0072CE;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  @media only screen and (max-width: 480px) {
+    .container {
+      padding: 12px;
+    }
+    p, li {
+      font-size: 15px;
+    }
+    a.button {
+      display: inline-block;
+      width: auto;
+      padding: 9px 18px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+
+<div class="container">
+  <p>Hey %%=v(@firstName)=%%,</p>
+
+  <p>We noticed your line <a href="tel:%%=v(@phoneNo)=%%">%%=v(@phoneNo)=%%</a> has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉</p>
+
+  <p>Here’s what’s waiting for you:</p>
+  <ul>
+    <li><strong>%%=v(@newPlanA)=%%</strong> — just $%%=v(@newPlanAPrice)=%%! Use code <strong>%%=v(@promoA_50)=%%</strong></li>
+    <li><strong>%%=v(@newPlanB)=%%</strong> — only $%%=v(@newPlanBPrice)=%%! Use code <strong>%%=v(@promoB_50)=%%</strong></li>
+  </ul>
+
+  <p>Don’t wait too long — these offers won’t last forever!</p>
+
+  <p>
+    <a href="https://geemobile.com/reactivation" class="button">Reactivate Now</a>
+  </p>
+
+  <p>Let’s get you back to enjoying all the perks of being connected! 💙</p>
+
+  <p><strong>Your GeeMobile Team</strong></p>
+</div>
+
+

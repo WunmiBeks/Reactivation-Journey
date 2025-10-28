@@ -1,0 +1,78 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #333333;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  p, li {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  a.button {
+    display: inline-block;
+    background-color: #6F42C1;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .container {
+      padding: 12px;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    a.button {
+      width: auto;
+      padding: 10px 20px;
+      font-size: 15px;
+    }
+  }
+</style>
+
+<div class="container">
+  <p>Hi %%=v(@firstName)=%%,</p>  
+
+  <p>Just a friendly nudge — your reactivation offer for <a href="tel:%%=v(@phoneNo)=%%">%%=v(@phoneNo)=%%</a> is still active, and we’d hate for you to miss it!</p>  
+
+  <p>Take your pick 👇🏽</p>
+
+  <ul>
+    <li>Upgrade to %%=v(@newPlanA)=%% for only $%%=v(@newPlanAPrice)=%% — grab it with %%=v(@promoA_50)=%%</li>
+    <li>Or pick %%=v(@newPlanB)=%% at $%%=v(@newPlanBPrice)=%% using %%=v(@promoB_50)=%%</li>
+  </ul>
+
+  <p>Reconnect and enjoy better data, better deals, and all the fun that comes with it!</p>
+
+  <p>
+    <a href="https://geemobile.com/reactivation" class="button">Reactivate My Line</a>
+  </p>
+
+  <p>We’re saving your spot… but not for much longer.</p>
+
+  <p><strong>Your GeeMobile Team</strong></p>
+</div>

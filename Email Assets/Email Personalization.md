@@ -2,9 +2,9 @@
 
 ### Email 1: 
 Subject Line: We’ve been missing you — here’s 50% off your plan!
-Preheader: Reactivate your line and grab your half-price offer today 💥
 
 Body:
+
 Hey `%%=v(@firstName)=%%`,  
 
 We noticed your line `%%=v(@phoneNo)=%%` has been a bit quiet lately. So, we thought we’d give you two exciting ways to get back online — at a discount! 🎉  
@@ -25,13 +25,12 @@ Your GeeMobile Team
 ### Email 2: 
 
 Subject Line: Don’t leave your 50% discount hanging!
-Preheader: Your discount is still live — but not for long! ⏳
 
 Body:
 
 Hi `%%=v(@firstName)=%%`  
 
-Just a friendly nudge — your reactivation offer for `%%=v(@phoneNo)=%%` is still active, and we’d hate for you to miss it! 💌 
+Just a friendly nudge — your reactivation offer for `%%=v(@phoneNo)=%%` is still active, and we’d hate for you to miss it! 
 
 Take your pick 👇🏽  
 - Upgrade to `%%=v(@newPlanA)=%%` for only $`%%=v(@newPlanAPrice)=%%` — grab it with `%%=v(@promoA_50)=%%`!  
@@ -40,7 +39,7 @@ Take your pick 👇🏽
 Reconnect and enjoy better data, better deals, and all the fun that comes with it!
 `<a href="https://geemobile.com/reactivation">Reactivate My Line</a>`
 
-We’re saving your spot… but not for much longer. 😉
+We’re saving your spot… but not for much longer. 
 
 Your GeeMobile Team
 
@@ -49,7 +48,6 @@ Your GeeMobile Team
 ### Email 3:
 
 Subject Line: Last call, 🚨 Your 50% off disappears tonight!
-Preheader: This is your last chance to reactivate with a special deal.
 
 Body:
 

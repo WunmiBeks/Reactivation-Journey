@@ -1,0 +1,78 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #333333;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  p, li {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  a.button {
+    display: inline-block;
+    background-color: #0072CE;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .container {
+      padding: 12px;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    a.button {
+      width: auto;
+      padding: 10px 20px;
+      font-size: 15px;
+    }
+  }
+</style>
+
+<div class="container">
+  <p>Hey %%=v(@firstName)=%%,</p>  
+
+  <p>This is it — your final reminder to bring back your line <a href="tel:%%=v(@phoneNo)=%%">%%=v(@phoneNo)=%%</a> and grab these exclusive deals before they disappear! ⏳</p>  
+
+  <p>We’ve got two awesome plans waiting for you 👇🏽</p>
+
+  <ul>
+    <li><strong>%%=v(@newPlanA)=%%</strong> — just $%%=v(@newPlanAPrice)=%%! Use code <strong>%%=v(@promoA_50)=%%</strong></li>
+    <li><strong>%%=v(@newPlanB)=%%</strong> — only $%%=v(@newPlanBPrice)=%%! Use code <strong>%%=v(@promoB_50)=%%</strong></li>
+  </ul>
+
+  <p>Don’t let your special offer slip away — it’s your last chance to reconnect and enjoy the perks you love!</p>
+
+  <p>
+    <a href="https://geemobile.com/reactivation" class="button">Reactivate Before It’s Gone</a>
+  </p>
+
+  <p>We can’t wait to have you back. 💙</p>
+
+  <p><strong>Your GeeMobile Team</strong></p>
+</div>
