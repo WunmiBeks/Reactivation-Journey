@@ -45,3 +45,4 @@ AND                NOT EXISTS ( SELECT      1
  AND               NOT EXISTS (SELECT      1
                                FROM       [ReactivationAudience_ControlLog] control
                                WHERE      mast.SubscriberKey = control.SubscriberKey)
+
