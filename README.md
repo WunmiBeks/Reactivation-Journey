@@ -97,9 +97,7 @@ Hey **`<FirstName>`**,
 This is it — your final reminder to bring back your line **`<PhoneNo>`** and grab these exclusive deals before they disappear! ⏳  
 
 We’ve got two awesome plans waiting for you 👇🏽  
-**`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
-**`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
-**`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**  
+**`<Plan A upgrade name>`** — just $**`<UpgradePlanA_Price>`**! Use code **`<UpgradePlanA_50PromoCode>`**   
 **`<Plan B upgrade name>`** — only $**`<UpgradePlanB_Price>`**! Use code **`<PromoCodeB_50romoCode>`**
 
 Don’t let your special offer slip away — it’s your last chance to reconnect and enjoy the perks you love!
