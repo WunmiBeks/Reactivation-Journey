@@ -1,4 +1,7 @@
-# REACTIVATION CAMPAIGN
+# Reactivation Campaign - End-to-End Journey
+
+![Reactivation Screenshot](images/reactivate.png)
+
 
 ## Project Overview
 
