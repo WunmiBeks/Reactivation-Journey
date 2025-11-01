@@ -64,6 +64,7 @@ Audience segmentation was performed in Automation Studio using a staging approac
 
 ![Query Overview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_1.png)
 
+#### 2.1. SQL Queries
 
 - **SQL Query 1:** Writes data into Reactivation_Staging Data Extension by partially filling in fields and updating old records with new ones each time the query runs. 
 
@@ -101,6 +102,15 @@ Audience segmentation was performed in Automation Studio using a staging approac
 [View the SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/5-ReactivationAudience_JourneyDE_FlagUpdate.sql)
 
 ![Query 5](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AStudio_UpdateFlag.png)
+
+
+
+---
+
+#### 2.1 Final Audience Output  
+![Journey Audience](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ReactivationAudience_JourneyDE.png)  
+*Resulting audience after segmentation queries — 90% of eligible inactive subscribers ready to enter the journey (excluding the 10% control group).*
+
 
 ---
 
@@ -155,7 +165,7 @@ Designed the journey flow to include three emails:
 
 Subscribers who reactivated were removed from receiving further emails.  
 
-![JourneyFlow](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/JourneyFlowEntry.png)  
+![Journey Flow](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/JourneyFlow.png)  
 
 ---
 
@@ -172,7 +182,8 @@ Exit criteria were configured by combining Journey Data with Contact Data to ens
 
 By aligning Journey Data with Contact Data, the journey remained responsive to subscriber actions in real time.  
 
-![Exit Criteria](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/JourneyFlowEntry.png) 
+![Exit Criteria](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/Journey_ExitCriteria.png) 
+*Journey flow showing the three-email reactivation sequence.*
 
 ---
 
@@ -211,3 +222,6 @@ The campaign achieved its technical objectives while strengthening best practice
 **Learnings:**  
 - Staging Data Extensions improved efficiency and reliability of automation runs.  
 - Leveraging contact data updates made the journey adaptive to real-time subscriber actions.  
+
+
+
