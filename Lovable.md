@@ -1,21 +1,45 @@
-# Reactivation Campaign- End-To-End Journey  
+# Reactivation Campaign – End-To-End Journey  
+
+<p align="center">
+  <img src="https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/Thumbnail.png" alt="Hero Image" width="800"/>
+</p>
+
+<p align="center"><em>
+End-to-end Salesforce Marketing Cloud journey for re-engaging inactive subscribers with personalized offers.
+</em></p>
+
+<p align="center">
+  <a href="https://github.com/WunmiBeks/Reactivation-Journey">
+    <img src="https://img.shields.io/badge/View%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Repo"/>
+  </a>
+</p>
+
+<br><br>
+
+---
+
+<br>
 
 ## Project Description  
-Reactivation campaign using SQL, AMPscript, and HTML/CSS to personalize discounts for each inactive phone line and boost customer re-engagement.  
+Reactivation campaign using **SQL**, **AMPscript**, and **HTML/CSS** to personalize discounts for each inactive phone line and boost customer re-engagement.  
+<br>
 
 ### Scenario  
-GeeMobile is launching a Reactivation Campaign to re-engage inactive customers with personalized discounts on upgraded plans. Because customers may have multiple phone lines under one account, each inactive line requires its own personalized journey, adding complexity to the campaign.  
+GeeMobile launched a Reactivation Campaign to re-engage inactive customers with personalized discounts on upgraded plans. Because customers may have multiple phone lines under one account, each inactive line required its own personalized journey — adding complexity to the campaign.  
+<br>
 
 ### Campaign Journey  
-- Three-email journey: introduction, reminder, and last-chance offer  
-- Customers who reactivate should not receive further emails  
+- Three-email journey: introduction, reminder, and final-chance offer  
+- Customers who reactivated stopped receiving further emails  
 - Exit customers immediately once they take up the offer  
 - 10% control group set up to measure uplift  
+<br>
 
 ### Target Audience  
 - Include phone numbers inactive for 10–180 days  
 - Exclude phone IDs that re-entered within 90 days  
-- Exclude phone IDs in the Reactivated Customers DE within 90 days  
+- Exclude phone IDs in the Reactivated_Customers DE within 90 days  
+<br>
 
 ### SFMC Features  
 - Contact Builder  
@@ -23,205 +47,282 @@ GeeMobile is launching a Reactivation Campaign to re-engage inactive customers w
 - Email Studio  
 - Content Builder  
 - Journey Builder  
+<br>
 
 ### Languages  
 - SQL  
 - AMPscript  
 - HTML/CSS  
 
+<br><br>
 ---
+<br>
 
 ## Solution Walkthrough  
-This is the step-by-step implementation of the Reactivation Campaign, covering Data Extensions (DE), segmentation logic, personalization, and journey design.
-
---- 
-
-### Step 1: Data Extension Setup
-
-The required Data Extensions were created and assigned primary keys to store subscriber details, plan information, and reactivation history. 
-
-#### Master_Customer Data Extension
-Holds details of all subscribers, both active and inactive.
-
-Image: MasterCustomerDE.png 
-**Master_Customer DE showing subscriber account and phone-level details**
+This is the step-by-step implementation of the Reactivation Campaign, covering Data Extensions (DE), segmentation logic, personalization, and journey design.  
+<br>
 
 ---
 
-#### Plan_Matrix Data Extension
-Contains available plans, upgrade options, plan names, prices, data allowance, and promo codes. 
+### Step 1: Data Extension Setup  
+<br>
 
-Image: plans_matrix.png
+The required Data Extensions were created and assigned primary keys to store subscriber details, plan information, and reactivation history.  
+<br>
 
---- 
+#### Master_Customer Data Extension  
+Holds details of all subscribers, both active and inactive.  
+<br>
 
-#### Reactivated_Customers Data Extension 
-Tracks subscribers who have accepted the offer and reactivated within the last 90 days. (This DE will be populated later once the journey is live, so its screenshot will be shown in the Journey section.)
+![MasterCustomerDE](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/MasterCustomerDE.png)  
+*Master_Customer DE showing subscriber account and phone-level details.*  
 
-
-### Step 2: Audience Segmentation
-Audience segmentation was performed in Automation Studio using a staging approach to improve query efficiency and simplify troubleshooting.
-
-![Query Overview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_1.png)
-
-#### 2.1. SQL Queries
-
-- **SQL Query 1:** Writes data into Reactivation_Staging Data Extension by partially filling in fields and updating old records with new ones each time the query runs. 
-
-[View SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/1-ReactivationCampaign_Staging.sql)
-
-![Query 1](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_2.png)
-
-
-- **SQL Query 2:** this updates empty fields in ReactivationAudience_Staging and replaces records when changes occur.
-
-[View the SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/2-Reactivation_Staging_UpdatePlan.sql)
-
-![Query 2](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_3.png)
-
+<br><br>
 ---
+<br>
 
-- **SQL Query 3:** selects 10% of the target audience from ReactivationAudience_Staging (excluding Control Log) as the control group for measuring campaign uplift.
+#### Plan_Matrix Data Extension  
+Contains available plans, upgrade options, plan names, prices, data allowance, and promo codes.  
+<br>
 
-[View the SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/3-ReactivationAudience_ControlLog.sql)
+![Plan_Matrix](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/plans_matrix.png)  
+*Plan_Matrix DE listing available plans and promo offers.*  
 
-![Query 3](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_5.png)
-
+<br><br>
 ---
+<br>
 
-**SQL Query 4:** this moves records frm the staging DE to the journey DE while making sure that the 10% control group is excluded
+#### Reactivated_Customers Data Extension  
+Tracks subscribers who have accepted the offer and reactivated within the last 90 days. (This DE will be populated later once the journey is live, so its screenshot will be shown in the Journey section.)  
+<br>
 
-[View the SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/4-ReactivationAudience_JourneyDE.sql)
-
-![Query 4](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_4.png)
-
+<br><br>
 ---
+<br>
 
-**SQL Query 5:** this checks for customers who reactivated in the last 90 days and flags them in the journey DE
+### Step 2: Audience Segmentation  
+<br>
 
-[View the SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/5-ReactivationAudience_JourneyDE_FlagUpdate.sql)
+Audience segmentation was performed in **Automation Studio** using a staging approach to improve query efficiency and simplify troubleshooting.  
+<br>
 
-![Query 5](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AStudio_UpdateFlag.png)
+![Query Overview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_1.png)  
+*Overview of Automation Studio queries used for audience segmentation.*  
 
-
-
+<br><br>
 ---
+<br>
 
-#### 2.1 Final Audience Output  
+#### 2.1 SQL Queries  
+<br>
+
+- **SQL Query 1:** Writes data into `Reactivation_Staging` DE by partially filling fields and updating old records with new ones each time the query runs.  
+  [View SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/1-ReactivationCampaign_Staging.sql)  
+  ![Query 1](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_2.png)  
+  <br><br>
+
+- **SQL Query 2:** Updates empty fields in `ReactivationAudience_Staging` and replaces records when changes occur.  
+  [View SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/2-Reactivation_Staging_UpdatePlan.sql)  
+  ![Query 2](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_3.png)  
+  <br><br>
+
+- **SQL Query 3:** Selects 10% of the target audience from `ReactivationAudience_Staging` (excluding Control Log) as the control group for measuring campaign uplift.  
+  [View SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/3-ReactivationAudience_ControlLog.sql)  
+  ![Query 3](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_5.png)  
+  <br><br>
+
+- **SQL Query 4:** Moves records from the staging DE to the journey DE while excluding the 10% control group.  
+  [View SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/4-ReactivationAudience_JourneyDE.sql)  
+  ![Query 4](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AutomationStudio_4.png)  
+  <br><br>
+
+- **SQL Query 5:** Checks for customers who reactivated in the last 90 days and flags them in the journey DE.  
+  [View SQL Query](https://github.com/WunmiBeks/Reactivation-Journey/blob/main/5-ReactivationAudience_JourneyDE_FlagUpdate.sql)  
+  ![Query 5](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/AStudio_UpdateFlag.png)  
+  <br><br>
+
+#### 2.2 Final Audience Output  
 ![Journey Audience](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ReactivationAudience_JourneyDE.png)  
-*Resulting audience after segmentation queries — 90% of eligible inactive subscribers ready to enter the journey (excluding the 10% control group).*
+*Resulting audience after segmentation queries — 90% of eligible inactive subscribers ready to enter the journey (excluding the 10% control group).*  
 
+<br><br>
 
 ---
 
 ### Step 3: Journey Design  
-The Reactivation Journey was designed in Journey Builder to target the 90% of eligible inactive subscribers while excluding the 10% control group.  
+<br>
 
----
+The Reactivation Journey was designed in **Journey Builder** to target the 90% of eligible inactive subscribers while excluding the 10% control group.  
+<br>
 
 #### 3.1 Connect Journey DE in Contact Builder  
-Connected the Reactivation_JourneyDE in Contact Builder by mapping **Contact Key** with **SubscriberKey**, ensuring each phone line is tracked and enters the journey only once.  
+Connected `Reactivation_JourneyDE` in Contact Builder by mapping **Contact Key = SubscriberKey**, ensuring each phone line is tracked and enters the journey only once.  
+<br>
 
-![ContactBuilder 1](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ContactBuilder_1.png)
-
-![ContactBuilder 2](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ContactBuilder_2.png) 
-
----
+![ContactBuilder 1](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ContactBuilder_1.png)  
+![ContactBuilder 2](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ContactBuilder_2.png)  
+<br>
 
 #### 3.2 Journey Entry Source  
-Configured Reactivation_JourneyDE as the entry source for the journey to allow eligible subscribers to flow into the campaign.  
+Configured `Reactivation_JourneyDE` as the entry source for the journey to allow eligible subscribers to flow into the campaign.  
+<br>
 
-![Journey Entry Source](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/EntrySource.png) 
-
+![Journey Entry Source](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/EntrySource.png)  
+<br>
 
 #### 3.3 Journey Schedule & Contact Evaluation  
-The entry Data Extension is refreshed daily through **Automation Studio**, ensuring that newly eligible subscribers are evaluated and entered into the journey automatically without manual intervention.  
+The entry DE is refreshed daily through **Automation Studio**, ensuring that newly eligible subscribers are evaluated and entered into the journey automatically.  
+<br>
 
-- Automation Studio runs a daily automation to refresh and update the Reactivation_JourneyDE with the latest qualified records.  
-- Contact Evaluation is set to *Evaluate new records only*, so that only newly added or updated records are considered for entry, preventing duplicates and re-entry of outdated data.  
+- Automation Studio runs a daily automation to refresh and update the `Reactivation_JourneyDE`.  
+- Contact Evaluation set to *Evaluate new records only* — prevents duplicates and outdated re-entries.  
+<br>
 
-![JourneySchedule](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/EntrySource.png)
- 
-*Automation Studio schedule ensuring daily refresh of eligible contacts for the journey.*  
-
----
+![Journey Schedule](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/JourneySchedule_ContactEvaluation.png)  
+*Automation Studio schedule ensuring daily refresh of eligible contacts.*  
+<br>
 
 #### 3.4 Contact Entry Settings  
-Under Journey Settings, the entry configuration was set to control how contacts can enter or re-enter the journey:  
+**Contact Entry Mode: Re-entry Anytime** — allows subscribers with multiple phone lines to re-enter the journey when another eligible line becomes inactive.  
+<br>
 
-- **Contact Entry Mode (Re-entry anytime:**) — allows subscribers with multiple phone lines to re-enter the journey when another eligible line becomes inactive.  
-
-![Contact Entry](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ContactEntry.png) 
+![Contact Entry](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ContactEntry.png)  
 *Contact entry configuration ensuring clean audience control and re-entry logic.*  
-
----
+<br>
 
 #### 3.5 Journey Flow  
 Designed the journey flow to include three emails:  
-
 - **Email 1:** Introduction to the reactivation offer  
 - **Email 2:** Reminder to take action  
 - **Email 3:** Final chance before expiration  
 
-Subscribers who reactivated were removed from receiving further emails.  
+Subscribers who reactivated were automatically removed from receiving further emails.  
+<br>
 
 ![Journey Flow](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/JourneyFlow.png)  
-
----
+*Three-email reactivation sequence showing offer introduction, reminder, and final chance.*  
+<br>
 
 #### 3.6 Exit Criteria  
-Exit criteria were configured by combining Journey Data with Contact Data to ensure subscribers exited the journey at the right time.  
+Exit criteria combined Journey Data and Contact Data to ensure subscribers exited the journey at the right time.  
+<br>
 
-- **SubscriberKey (Journey Data)** = **SubscriberKey (Contact Data)**  
-- **PhoneID (Journey Data)** = **PhoneID (Contact Data)**  
-  *This mapping uniquely identifies each phone line while the subscriber is in the journey.*  
+- **SubscriberKey (Journey)** = **SubscriberKey (Contact)**  
+- **PhoneID (Journey)** = **PhoneID (Contact)**  
+- **HasReactivated = True** or **EmailConsent = Opted Out**  
 
-- HasReactivated = True *(from Contact Data)*  
-- EmailConsent = Opted Out *(from Contact Data)*  
-  *These conditions ensured subscribers were removed if they reactivated or opted out, maintaining both privacy and compliance standards.*  
+These conditions ensured immediate exit once subscribers reactivated or opted out.  
+<br>
 
-By aligning Journey Data with Contact Data, the journey remained responsive to subscriber actions in real time.  
-
-![Exit Criteria](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/Journey_ExitCriteria.png) 
-*Journey flow showing the three-email reactivation sequence.*
+![Exit Criteria](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/Journey_ExitCriteria.png)  
+*Journey flow showing the three-email reactivation sequence and exit conditions.*  
+<br>
 
 ---
 
 ### Step 4: Journey Outcomes  
-As the journey ran, subscriber status was updated based on real-time contact data, ensuring accurate exits for reactivated or opted-out subscribers.
+<br>
 
-For demonstration, a record was manually added to the **Reactivated_Customers** DE to simulate a subscriber accepting the reactivation offer.  
+As the journey ran, subscriber status updated in real time based on contact data, ensuring accurate exits for reactivated or opted-out subscribers.  
+<br>
+
+#### 4.1 Reactivated Customers   
+Captures subscribers who accepted the offer within 90 days.  
+<br>
+
+![Reactivated Customers](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ReactivatedCustomers.png)  
+*Subscriber CID005 accepted the offer.*  
+<br>
+
+#### 4.2 Journey Data Update (HasReactivated Flag)
+When the automation ran again, the **HasReactivated** field in `Reactivation_JourneyDE` updated from False to True.  
+Because Journey Data and Contact Data were linked, this triggered an automatic exit.  
+<br>
+
+![Journey Data Update](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/UpdatedReactivaton.png)  
+*Journey DE showing the HasReactivated field updated for subscribers who accepted the offer.*  
+<br>
 
 ---
 
-#### 4.1 Reactivated_Customers DE  
-This DE captures subscribers who accept the offer within the last 90 days. For testing, a record was manually added to simulate a subscriber reactivating. 
+## Personalized Email Previews  
+This section showcases the personalized emails generated from the Reactivation Journey, demonstrating how AMPscript-driven data is transformed into personalized subscriber experiences.
 
-![Reactivated_CustomersDE](Reactivated_CustomersDE.png)  
+<br>
 
+### **1. AMPscript Personalization Preview**  
+![Personalization Preview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/Preview1.png)  
+*Salesforce Marketing Cloud subscriber preview showing AMPscript-driven personalization and dynamic field mapping.*  
 
-#### 4.2 Reactivation_JourneyDE  
-When the automation ran again, the **HasReactivated** field in the **Reactivation_JourneyDE** was automatically updated from False to True.  
-Because Journey Data (SubscriberKey and PhoneID) was mapped to Contact Data, the exit criteria detected this change and triggered the exit.
+**Description:**  
+This preview demonstrates how **AMPscript** retrieves subscriber-specific attributes from the **Master_Customer** Data Extension and injects them directly into the email content.  
 
-This confirmed that the exit logic worked exactly as intended:
-- Reactivated subscribers exited the journey immediately once Contact Data was updated.
-- Subscribers who opted out of email were also removed, meeting compliance and regulatory standards.
+Each numbered field corresponds to a dynamic value displayed in the personalized email:  
+1. **First Name (Bob)** — personalized greeting.  
+2. **UpgradePlanA_PlanName (Ultra Plan)** — plan A name.  
+3. **UpgradePlanA_PlanPrice (90)** — personalized price.  
+4. **UpgradePlanA_50PromoCode (FLS94)** — unique discount code for Plan A.  
+5. **UpgradePlanB_PlanName (Unlimited Plan)** — plan B name.  
+6. **UpgradePlanB_PlanPrice (70)** — personalized price.  
+7. **UpgradePlanB_50PromoCode (BYN32)** — discount code for Plan B.  
+8. **Phone Number (5550129903)** — formatted dynamically per subscriber.  
 
-![JourneyDE_HasReactivated](Reactivation_JourneyDE.png)  
+**Purpose:**  
+Demonstrates how subscriber data is dynamically transformed into personalized email content, ensuring each recipient receives accurate, real-time plan details and promo offers.  
+<br>
 
+---
 
-### Results & Key Learnings  
+### **2. Introductory Offer Email**  
+![Intro Email Preview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/IntroEmail.png)  
+*First email in the reactivation journey introducing personalized offers and promo codes.*  
 
-The campaign achieved its technical objectives while strengthening best practices in compliance, efficiency, and customer trust. 
+**Purpose:**  
+This is the initial reactivation message triggered for inactive subscribers. It dynamically personalizes:  
+- **Subscriber’s name** (e.g., “Hey Bob”)  
+- **Inactive phone line** (e.g., `(555) 012-9903`)  
+- **Plan offers, prices, and promo codes** (e.g., *Ultra Plan – $90 (FLS94)*, *Unlimited Plan – $70 (BYN32)*)  
 
-**Results:**   
-- Reactivated customers were seamlessly excluded from further sends, ensuring a positive customer experience.  
-- Compliance safeguards ensured that opted-out subscribers were respected throughout the journey.  
+It encourages subscribers to re-engage through a single **“Reactivate Now”** call-to-action button.  
+<br>
 
-**Learnings:**  
-- Staging Data Extensions improved efficiency and reliability of automation runs.  
-- Leveraging contact data updates made the journey adaptive to real-time subscriber actions.  
+---
 
+### **3. Reminder Email**  
+![Reminder Email Preview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/ReminderEmail.png)  
+*Second email in the reactivation sequence reminding inactive subscribers to take advantage of their personalized offer before it expires.*  
 
+**Purpose:**  
+This mid-journey email serves as a friendly reminder for subscribers who haven’t yet reactivated their line.  
+It reinforces urgency with dynamic expiration text and reuses the same personalization fields — including name, plan, price, and promo codes — to keep the message relevant.  
 
+<br>
+
+---
+
+### **4. Final-Chance Reactivation Email**  
+![Final Chance Email Preview](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/FinalEmail.png)  
+*Final email in the reactivation journey encouraging subscribers to take last-minute action before the campaign closes.*  
+
+**Purpose:**  
+This is the last touchpoint in the three-email journey. It uses influential language and urgency to encourage final conversions before the offer expires.  
+
+<br>
+
+---
+
+<br>
+## Results & Key Learnings  
+<br>
+
+**Results:**  
+- Reactivated customers were seamlessly excluded from further sends.  
+- Compliance safeguards ensured opted-out subscribers were respected.  
+<br>
+
+**Key Learnings:**  
+- Staging DEs improved efficiency and reliability.  
+- Real-time contact data updates made the journey adaptive.  
+<br>
+
+---
