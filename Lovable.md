@@ -239,7 +239,7 @@ When the automation ran again, the **HasReactivated** field in `Reactivation_Jou
 Because Journey Data and Contact Data were linked, this triggered an automatic exit.  
 <br>
 
-![Journey Data Update](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/UpdatedReactivaton.png)  
+![Journey Data Update](https://github.com/WunmiBeks/Reactivation-Journey/raw/main/Image/UpdatedReactivation.png)  
 *Journey DE showing the HasReactivated field updated for subscribers who accepted the offer.*  
 <br>
 
